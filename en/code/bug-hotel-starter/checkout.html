@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bug Hotel: Checkout</title>
+  <style>
+    :root {
+      --panel: #f6ead0;
+      --ink: #1f1810;
+      --trim: #654f34;
+      --shadow: rgba(18, 25, 31, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top, rgba(255, 220, 166, 0.2), transparent 30%),
+        linear-gradient(180deg, #2c4456 0%, #1b2b37 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.04) 0,
+        rgba(255, 255, 255, 0.04) 16px,
+        transparent 16px,
+        transparent 40px
+      );
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      max-width: 760px;
+      margin: 1.5rem;
+      padding: clamp(1.5rem, 5vw, 2.4rem);
+      border-radius: 30px;
+      border: 3px solid var(--trim);
+      background: linear-gradient(180deg, rgba(246, 234, 208, 0.98), rgba(238, 223, 189, 0.98));
+      box-shadow: 0 24px 42px var(--shadow);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.8rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #885026;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 4.1rem);
+      line-height: 0.95;
+    }
+
+    p {
+      line-height: 1.65;
+    }
+
+    .ideas {
+      margin-top: 1.2rem;
+      padding: 1rem 1.1rem;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.52);
+      border: 2px solid rgba(101, 79, 52, 0.16);
+    }
+
+    .ideas ul {
+      margin: 0.7rem 0 0;
+      padding-left: 1.1rem;
+    }
+
+    .ideas li {
+      line-height: 1.55;
+    }
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.4rem;
+    }
+
+    .link-row a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      color: white;
+      background: linear-gradient(180deg, #e78958, #cb6736);
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 12px 20px rgba(135, 78, 37, 0.24);
+      transition: transform 180ms ease;
+    }
+
+    .link-row a:hover {
+      transform: translateY(-2px);
+    }
+
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.95rem;
+      padding: 0.08rem 0.35rem;
+      border-radius: 999px;
+      background: rgba(101, 79, 52, 0.12);
+    }
+  </style>
+</head>
+<body>
+  <article class="card">
+    <p class="eyebrow">Checkout complete</p>
+    <h1>You repaired the Bug Hotel</h1>
+    <p>
+      Every room now works again. You tracked down CSS, JavaScript, and HTML bugs one
+      at a time and turned them into a complete little puzzle game.
+    </p>
+
+    <section class="ideas">
+      <p>Try extending the hotel with one more room of your own.</p>
+      <ul>
+        <li>Add a class name typo that breaks the styling on a clue card.</li>
+        <li>Hide a message with <code>display: none</code> and reveal it with JavaScript.</li>
+        <li>Create a room where a sound button uses the wrong file name.</li>
+      </ul>
+    </section>
+
+    <div class="link-row">
+      <a href="index.html">Return to the lobby</a>
+      <a href="room-1.html">Play again from room 1</a>
+    </div>
+  </article>
+</body>
+</html>

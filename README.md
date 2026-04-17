@@ -1,18 +1,24 @@
-# default-project-template
+# Bug Hotel
 
-![default-project-template](banner.png)
+![Bug Hotel](banner.png)
 
-Find the project online at [projects.raspberrypi.org/en/projects/default-project-template](https://projects.raspberrypi.org/en/projects/default-project-template)
+Bug Hotel is a small HTML, CSS, and JavaScript puzzle project. Players move through a
+series of hotel rooms by fixing one tiny web bug on each page.
 
-## Resources
-For project materials and solutions, see [en/resources](https://github.com/raspberrypilearning/default-project-template/tree/master/en/resources) and [en/solutions](https://github.com/raspberrypilearning/default-project-template/tree/master/en/solutions).
+## Project contents
+
+- `en/code/bug-hotel-starter/` contains the playable hotel pages
+- `en/meta.yml` defines the project metadata
+- `en/step_1.md` to `en/step_7.md` describe the activity
 
 ## Contributing
+
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Licence
+
 See [LICENCE.md](LICENCE.md)
 
 ## Setting up a Crowdin project
 
-See [CROWDIN.md](CROWDIN.md).
+See [CROWDIN.md](CROWDIN.md)

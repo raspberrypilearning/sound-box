@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bug Hotel: Room 5</title>
+  <style>
+    :root {
+      --paper: rgba(245, 233, 206, 0.95);
+      --ink: #201911;
+      --trim: #5b4f39;
+      --shadow: rgba(23, 27, 35, 0.32);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top, rgba(255, 221, 165, 0.2), transparent 30%),
+        linear-gradient(180deg, #314153 0%, #222d3a 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.04) 0,
+        rgba(255, 255, 255, 0.04) 16px,
+        transparent 16px,
+        transparent 40px
+      );
+      pointer-events: none;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: clamp(1.2rem, 4vw, 2.4rem);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .brand {
+      color: #fff9ef;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .topbar a,
+    .checkout-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      text-decoration: none;
+      font: inherit;
+      font-weight: bold;
+      transition: transform 180ms ease;
+    }
+
+    .topbar a {
+      padding: 0.78rem 1.1rem;
+      color: white;
+      background: linear-gradient(180deg, #58646f, #384047);
+    }
+
+    .checkout-link {
+      padding: 1rem 1.4rem;
+      color: white;
+      background: linear-gradient(180deg, #7aa458, #5d7c40);
+      box-shadow: 0 12px 24px rgba(36, 48, 63, 0.2);
+    }
+
+    .topbar a:hover,
+    .checkout-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .card {
+      border-radius: 28px;
+      border: 3px solid var(--trim);
+      box-shadow: 0 22px 40px var(--shadow);
+      background: var(--paper);
+      padding: clamp(1.3rem, 4vw, 2rem);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #405427;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3.8rem);
+      line-height: 0.92;
+    }
+
+    .card p {
+      line-height: 1.6;
+    }
+
+    .foyer {
+      max-width: 700px;
+      margin: 1.4rem auto 0;
+      padding: 1.4rem;
+      border-radius: 28px;
+      background: linear-gradient(180deg, #43503a, #343d2c);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: #fff9ef;
+      text-align: center;
+    }
+
+    .door-row {
+      margin-top: 1.3rem;
+      padding: 1.6rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.11);
+      border: 2px dashed rgba(255, 255, 255, 0.28);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="topbar">
+      <span class="brand">Bug Hotel</span>
+      <a href="index.html">Back to lobby</a>
+    </div>
+
+    <section class="card">
+      <p class="eyebrow">Room 5</p>
+      <h1>The wonky checkout sign</h1>
+      <p>
+        You have reached the golden foyer. One last button should open the exit, but
+        the sign is pointing to the wrong file.
+      </p>
+
+      <div class="foyer">
+        <p class="eyebrow">Golden foyer</p>
+        <h2>Leave through the right door</h2>
+        <div class="door-row">
+          <!-- Compare this file name with the actual finishing page in the folder. -->
+          <a class="checkout-link" href="checkoutt.html">Open the golden doors</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

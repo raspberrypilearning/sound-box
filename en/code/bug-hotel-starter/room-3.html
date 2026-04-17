@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bug Hotel: Room 3</title>
+  <style>
+    :root {
+      --paper: rgba(244, 231, 202, 0.95);
+      --ink: #1d1711;
+      --trim: #634d33;
+      --shadow: rgba(18, 25, 28, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top, rgba(255, 229, 171, 0.18), transparent 30%),
+        linear-gradient(180deg, #25444a 0%, #18292d 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.04) 0,
+        rgba(255, 255, 255, 0.04) 16px,
+        transparent 16px,
+        transparent 40px
+      );
+      pointer-events: none;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: clamp(1.2rem, 4vw, 2.4rem);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .brand {
+      color: #fff8ea;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .topbar a,
+    .next-link,
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      text-decoration: none;
+      font: inherit;
+      font-weight: bold;
+      transition: transform 180ms ease;
+    }
+
+    .topbar a,
+    .next-link {
+      padding: 0.78rem 1.1rem;
+      color: white;
+      background: linear-gradient(180deg, #4e6f75, #2f4d53);
+    }
+
+    .next-link {
+      margin-top: 1rem;
+      background: linear-gradient(180deg, #5a9ca6, #3f7d86);
+    }
+
+    button {
+      padding: 1rem 1.45rem;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(180deg, #ffe08b, #daa93b);
+      color: #2d1c0c;
+      box-shadow: 0 12px 24px rgba(24, 41, 45, 0.22);
+    }
+
+    .topbar a:hover,
+    .next-link:hover,
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    .card,
+    .key-card {
+      border-radius: 28px;
+      border: 3px solid var(--trim);
+      box-shadow: 0 22px 40px var(--shadow);
+    }
+
+    .card {
+      background: var(--paper);
+      padding: clamp(1.3rem, 4vw, 2rem);
+    }
+
+    .key-card {
+      margin-top: 1rem;
+      padding: 1rem 1.2rem;
+      background: rgba(244, 231, 202, 0.95);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #22515a;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3.8rem);
+      line-height: 0.92;
+    }
+
+    .card p,
+    .key-card p {
+      line-height: 1.6;
+    }
+
+    .hallway {
+      max-width: 700px;
+      margin: 1.4rem auto 0;
+      padding: 1.4rem;
+      border-radius: 28px;
+      background: linear-gradient(180deg, #264f55, #1d3f44);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: #fff8ea;
+      text-align: center;
+    }
+
+    .switch-row {
+      margin-top: 1.2rem;
+      padding: 1.5rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px dashed rgba(255, 255, 255, 0.28);
+    }
+
+    .is-hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="topbar">
+      <span class="brand">Bug Hotel</span>
+      <a href="index.html">Back to lobby</a>
+    </div>
+
+    <section class="card">
+      <p class="eyebrow">Room 3</p>
+      <h1>The lost spare key</h1>
+      <p>
+        There is a hidden key card somewhere in this service corridor. Switch on the
+        lamp and it should appear.
+      </p>
+
+      <div class="hallway">
+        <p class="eyebrow">Service corridor</p>
+        <h2>Switch on the lamp</h2>
+        <div class="switch-row">
+          <button id="lampButton">Switch on the lamp</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="key-card is-hidden" id="spareKey">
+      <p>A hidden key card glints in the light. It points to the next room.</p>
+      <a class="next-link" href="room-4.html">Unlock room 4</a>
+    </section>
+  </main>
+
+  <script>
+    const lampButton = document.getElementById("lampButton");
+
+    lampButton.addEventListener("click", () => {
+      const spareKey = document.getElementById("spare-key");
+
+      if (spareKey) {
+        spareKey.classList.remove("is-hidden");
+      }
+    });
+  </script>
+</body>
+</html>

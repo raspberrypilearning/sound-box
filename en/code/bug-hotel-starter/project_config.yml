@@ -1,0 +1,4 @@
+name: "Bug Hotel"
+identifier: "bug-hotel-starter"
+type: 'html'
+build: true

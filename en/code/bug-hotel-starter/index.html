@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bug Hotel</title>
+  <style>
+    :root {
+      --paper: rgba(244, 231, 200, 0.95);
+      --ink: #1d1a16;
+      --trim: #6b5234;
+      --accent: #d06b3b;
+      --shadow: rgba(21, 28, 37, 0.34);
+      --card: rgba(255, 248, 232, 0.88);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top, rgba(255, 208, 140, 0.22), transparent 32%),
+        linear-gradient(180deg, #253648 0%, #1d2733 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.045) 0,
+        rgba(255, 255, 255, 0.045) 18px,
+        transparent 18px,
+        transparent 42px
+      );
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    main {
+      position: relative;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: clamp(1.2rem, 4vw, 2.5rem);
+    }
+
+    .hero,
+    .map {
+      border-radius: 30px;
+      border: 3px solid var(--trim);
+      box-shadow: 0 24px 40px var(--shadow);
+    }
+
+    .hero {
+      padding: clamp(1.5rem, 4vw, 2.4rem);
+      background: var(--paper);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #8e4522;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      line-height: 0.9;
+    }
+
+    .hero p {
+      max-width: 58ch;
+      font-size: 1.06rem;
+      line-height: 1.65;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.4rem;
+    }
+
+    .actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.2rem;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #e98953 0%, #c45f31 100%);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 10px 20px rgba(141, 69, 34, 0.28);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .actions a.secondary {
+      background: linear-gradient(180deg, #47616d, #30434c);
+    }
+
+    .actions a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 24px rgba(141, 69, 34, 0.33);
+    }
+
+    .map {
+      margin-top: 1.2rem;
+      padding: clamp(1.2rem, 4vw, 2rem);
+      background: linear-gradient(180deg, rgba(240, 220, 185, 0.9), rgba(214, 193, 153, 0.92));
+    }
+
+    .map h2 {
+      margin: 0 0 0.9rem;
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
+    }
+
+    .room-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .room-card {
+      padding: 1rem;
+      border-radius: 24px;
+      background: var(--card);
+      border: 2px solid rgba(107, 82, 52, 0.2);
+    }
+
+    .room-card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.2rem;
+    }
+
+    .room-card p {
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 760px) {
+      .room-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Front desk</p>
+      <h1>Bug Hotel</h1>
+      <p>
+        Welcome to the creakiest little hotel on the web. Each room hides one tiny bug.
+        Fix the code, refresh the page, and the next door will open.
+      </p>
+      <div class="actions">
+        <a href="room-1.html">Check into room 1</a>
+        <a class="secondary" href="checkout.html">Peek at checkout</a>
+      </div>
+    </section>
+
+    <section class="map">
+      <p class="eyebrow">Tonight's repairs</p>
+      <h2>Five rooms, five little problems</h2>
+      <div class="room-grid">
+        <article class="room-card">
+          <h3>Room 1</h3>
+          <p>A runaway button has slipped off the page.</p>
+        </article>
+        <article class="room-card">
+          <h3>Room 2</h3>
+          <p>A bell button calls the wrong function name.</p>
+        </article>
+        <article class="room-card">
+          <h3>Room 3</h3>
+          <p>A hidden clue stays hidden because an <code>id</code> does not match.</p>
+        </article>
+        <article class="room-card">
+          <h3>Room 4</h3>
+          <p>A note fades into the wallpaper because the colours are too similar.</p>
+        </article>
+        <article class="room-card">
+          <h3>Room 5</h3>
+          <p>The golden doors point at the wrong filename.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

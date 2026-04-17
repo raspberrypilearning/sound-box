@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bug Hotel: Room 4</title>
+  <style>
+    :root {
+      --paper: rgba(244, 231, 204, 0.95);
+      --ink: #22180e;
+      --trim: #6f4e2f;
+      --shadow: rgba(34, 24, 14, 0.32);
+      --note: #edd2a5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top, rgba(255, 220, 171, 0.18), transparent 26%),
+        linear-gradient(180deg, #4a3620 0%, #2d2216 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.035) 0,
+        rgba(255, 255, 255, 0.035) 16px,
+        transparent 16px,
+        transparent 42px
+      );
+      pointer-events: none;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: clamp(1.2rem, 4vw, 2.4rem);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .brand {
+      color: #fff7ea;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .topbar a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.78rem 1.1rem;
+      border-radius: 999px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background: linear-gradient(180deg, #7a5634, #5b3d23);
+      transition: transform 180ms ease;
+    }
+
+    .topbar a:hover {
+      transform: translateY(-2px);
+    }
+
+    .card {
+      border-radius: 28px;
+      border: 3px solid var(--trim);
+      box-shadow: 0 22px 40px var(--shadow);
+      background: var(--paper);
+      padding: clamp(1.3rem, 4vw, 2rem);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #7d470c;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3.8rem);
+      line-height: 0.92;
+    }
+
+    .card p {
+      line-height: 1.6;
+    }
+
+    .lounge {
+      max-width: 720px;
+      margin: 1.4rem auto 0;
+      padding: 1.5rem;
+      border-radius: 28px;
+      background: linear-gradient(180deg, #684726, #50351c);
+      border: 2px solid rgba(255, 255, 255, 0.18);
+      color: #fff7ea;
+    }
+
+    .notice {
+      margin-top: 1.3rem;
+      padding: 1.5rem;
+      border-radius: 24px;
+      background: var(--note);
+      border: 2px dashed rgba(111, 78, 47, 0.28);
+    }
+
+    .notice p {
+      margin: 0 0 1rem;
+      color: #6b4d28;
+    }
+
+    /* These colours are too similar, so the clue fades into the wallpaper. */
+    .faded-link {
+      display: inline-block;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      color: #eed2a5;
+      background: #eed2a5;
+      border: 2px solid #eed2a5;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="topbar">
+      <span class="brand">Bug Hotel</span>
+      <a href="index.html">Back to lobby</a>
+    </div>
+
+    <section class="card">
+      <p class="eyebrow">Room 4</p>
+      <h1>The faded note</h1>
+      <p>
+        Someone has left a note in the reading lounge. It should point to the next
+        room, but it is blending straight into the paper.
+      </p>
+
+      <div class="lounge">
+        <p class="eyebrow">Reading lounge</p>
+        <h2>Find the note under the lamp</h2>
+        <div class="notice">
+          <p>The lounge note should tell you where to go next.</p>
+          <a class="faded-link" href="room-5.html">Room 5: Follow the checkout sign</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bug Hotel: Room 1</title>
+  <style>
+    :root {
+      --paper: rgba(246, 232, 200, 0.94);
+      --ink: #201910;
+      --trim: #70512b;
+      --shadow: rgba(23, 28, 33, 0.34);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top, rgba(255, 210, 148, 0.24), transparent 30%),
+        linear-gradient(180deg, #283d49 0%, #1f2d36 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.045) 0,
+        rgba(255, 255, 255, 0.045) 16px,
+        transparent 16px,
+        transparent 40px
+      );
+      pointer-events: none;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: clamp(1.2rem, 4vw, 2.4rem);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .brand {
+      color: #fff7e5;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .topbar a,
+    .next-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.78rem 1.1rem;
+      border-radius: 999px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background: linear-gradient(180deg, #47616d, #30434c);
+      transition: transform 180ms ease;
+    }
+
+    .next-link {
+      margin-top: 1rem;
+      background: linear-gradient(180deg, #e98b56, #cf6836);
+    }
+
+    .topbar a:hover,
+    .next-link:hover,
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    .card,
+    .success {
+      border-radius: 28px;
+      border: 3px solid var(--trim);
+      box-shadow: 0 22px 40px var(--shadow);
+    }
+
+    .card {
+      background: var(--paper);
+      padding: clamp(1.3rem, 4vw, 2rem);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #90451e;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3.8rem);
+      line-height: 0.92;
+    }
+
+    .card p,
+    .success p {
+      line-height: 1.6;
+    }
+
+    .lift-box {
+      max-width: 680px;
+      margin: 1.5rem auto 0;
+      padding: 1.4rem;
+      border-radius: 28px;
+      background: linear-gradient(180deg, #325b63, #27474d);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: #fff7e5;
+    }
+
+    .button-rail {
+      position: relative;
+      height: 180px;
+      margin-top: 1.2rem;
+      border-radius: 24px;
+      background: rgba(255, 252, 244, 0.18);
+      border: 2px dashed rgba(255, 247, 229, 0.42);
+      overflow: hidden;
+    }
+
+    /* One horizontal value here has sent the lift button wandering. */
+    .runaway-button {
+      position: absolute;
+      top: 50%;
+      left: 118%;
+      transform: translate(-50%, -50%);
+      padding: 1rem 1.4rem;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #f4bb58, #d59125);
+      color: #24190d;
+      font: inherit;
+      font-weight: bold;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+      cursor: pointer;
+    }
+
+    .success {
+      margin-top: 1rem;
+      padding: 1rem 1.2rem;
+      background: rgba(246, 232, 200, 0.94);
+    }
+
+    .is-hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="topbar">
+      <span class="brand">Bug Hotel</span>
+      <a href="index.html">Back to lobby</a>
+    </div>
+
+    <section class="card">
+      <p class="eyebrow">Room 1</p>
+      <h1>The runaway lift button</h1>
+      <p>
+        The call button has skidded off to the right. Bring it back, press it, and the
+        lift will open the way to the next room.
+      </p>
+
+      <div class="lift-box">
+        <p class="eyebrow">Lift control</p>
+        <h2>Call the lift</h2>
+        <div class="button-rail">
+          <button class="runaway-button" id="liftButton">Call the lift</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="success is-hidden" id="nextStop">
+      <p>The lift doors slide open and a key card for room 2 appears.</p>
+      <a class="next-link" href="room-2.html">Walk to room 2</a>
+    </section>
+  </main>
+
+  <script>
+    const liftButton = document.getElementById("liftButton");
+    const nextStop = document.getElementById("nextStop");
+
+    liftButton.addEventListener("click", () => {
+      nextStop.classList.remove("is-hidden");
+    });
+  </script>
+</body>
+</html>

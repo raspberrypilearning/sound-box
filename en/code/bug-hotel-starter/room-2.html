@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bug Hotel: Room 2</title>
+  <style>
+    :root {
+      --paper: rgba(246, 231, 203, 0.95);
+      --ink: #20180f;
+      --trim: #6c4e35;
+      --shadow: rgba(22, 18, 29, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top, rgba(255, 208, 150, 0.24), transparent 28%),
+        linear-gradient(180deg, #32294d 0%, #211c34 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.045) 0,
+        rgba(255, 255, 255, 0.045) 16px,
+        transparent 16px,
+        transparent 42px
+      );
+      pointer-events: none;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: clamp(1.2rem, 4vw, 2.4rem);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .brand {
+      color: #fff4e8;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .topbar a,
+    .next-link,
+    .bell-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      text-decoration: none;
+      font: inherit;
+      font-weight: bold;
+      transition: transform 180ms ease;
+    }
+
+    .topbar a,
+    .next-link {
+      padding: 0.78rem 1.1rem;
+      color: white;
+      background: linear-gradient(180deg, #65536f, #46374f);
+    }
+
+    .next-link {
+      margin-top: 1rem;
+      background: linear-gradient(180deg, #e58567, #ca6043);
+    }
+
+    .bell-button {
+      padding: 1rem 1.5rem;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(180deg, #f6ca67, #d59a26);
+      color: #2b1b0f;
+      box-shadow: 0 12px 26px rgba(50, 41, 77, 0.25);
+    }
+
+    .topbar a:hover,
+    .next-link:hover,
+    .bell-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .card,
+    .message {
+      border-radius: 28px;
+      border: 3px solid var(--trim);
+      box-shadow: 0 22px 40px var(--shadow);
+    }
+
+    .card {
+      background: var(--paper);
+      padding: clamp(1.3rem, 4vw, 2rem);
+    }
+
+    .message {
+      margin-top: 1rem;
+      padding: 1rem 1.2rem;
+      background: rgba(246, 231, 203, 0.95);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.8rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #7a3024;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3.8rem);
+      line-height: 0.92;
+    }
+
+    .card p,
+    .message p {
+      line-height: 1.6;
+    }
+
+    .desk {
+      max-width: 700px;
+      margin: 1.4rem auto 0;
+      padding: 1.4rem;
+      border-radius: 28px;
+      background: linear-gradient(180deg, #73433d, #5d3430);
+      border: 2px solid rgba(255, 255, 255, 0.18);
+      color: #fff4e8;
+      text-align: center;
+    }
+
+    .bell-shelf {
+      margin-top: 1.2rem;
+      padding: 1.5rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 2px dashed rgba(255, 255, 255, 0.26);
+    }
+
+    .is-hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="topbar">
+      <span class="brand">Bug Hotel</span>
+      <a href="index.html">Back to lobby</a>
+    </div>
+
+    <section class="card">
+      <p class="eyebrow">Room 2</p>
+      <h1>The sleepy bell</h1>
+      <p>
+        The front desk bell looks ready to ring, but the call never reaches room
+        service. Wake it up to open the next door.
+      </p>
+
+      <div class="desk">
+        <p class="eyebrow">Night service</p>
+        <h2>Ring for help</h2>
+        <div class="bell-shelf">
+          <!-- One letter has gone missing in this function name. -->
+          <button class="bell-button" onclick="ringBel()">Ring the brass bell</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="message is-hidden" id="serviceNote" aria-live="polite">
+      <p>The bell chimes across the hallway and a key for room 3 slides into view.</p>
+      <a class="next-link" href="room-3.html">Head to room 3</a>
+    </section>
+  </main>
+
+  <script>
+    const serviceNote = document.getElementById("serviceNote");
+
+    function ringBell() {
+      serviceNote.classList.remove("is-hidden");
+    }
+  </script>
+</body>
+</html>

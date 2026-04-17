@@ -1,45 +1,25 @@
-## What you will make
-OR
-## What you will do - change meta if you use this
+## What you will do
 
-A brief description - one or two sentences. 
+In **Bug Hotel**, you are the repair expert.
 
---- print-only ---
+Each room in the hotel has one tiny bug. Your job is to:
 
-![ALT TEXT](images/IMAGE.png)
+- open the room page
+- test what is broken
+- fix one small piece of HTML, CSS, or JavaScript
+- refresh the page
+- use the unlocked link to move on to the next room
 
---- /print-only ---
+You will fix:
 
---- no-print ---
+- a button that has slipped off the page
+- a button with the wrong function name
+- a hidden clue that uses the wrong `id`
+- a clue that is hard to read because of its colours
+- a final link that points to the wrong file
 
-[Editor embed](https://editor.raspberrypi.org/en/embed/viewer/project-slug)
+### You will need
 
---- /no-print ---
-
---- no-print ---
-
-Video embed
-
-<video width="640" height="360" controls>
-<source src="images/videoname.mp4" type="video/mp4">
-</video>
-
-Youtube embed 
-<html>
-<div style="position: relative; overflow: hidden; padding-top: 56.25%;">
-<iframe style="position: absolute; top: 0; left: 0; right: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/XXXXXXXXX?rel=0&cc_load_policy=1" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
-</iframe>
-</div><br>
-</html>
-
-Scratch embed
-<div class="scratch-preview">
- <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/XXXXXXXXX/?autostart=false" frameborder="0"></iframe>
-</div>
-
---- /no-print ---
-
-### You will need:
-- a
-- b
-- c
+- a code editor or the Raspberry Pi Code Editor
+- a web browser
+- careful eyes for tiny bugs
